@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frag_one_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".FragmentOne"
+    android:background="@color/colorGreen"
+    android:padding="10dp"
+    android:gravity="center"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/frame1textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="First Fragment" />
+
+    <TextView
+        android:id="@+id/fragOneTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="10dp"
         android:text="@string/hello_fragment_one" />
     <Button
-        android:id="@+id/btnclr"
+        android:id="@+id/send1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:text="change color"/>
-
-    <Button
-        android:id="@+id/addfrag2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Add Fragment two"
-        android:layout_gravity="center"/>
-    <Button
-        android:id="@+id/addfrag2_child"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Fragment two child"/>
+        android:padding="5dp"
+        android:text="Send to Second"/>
 
 </LinearLayout>

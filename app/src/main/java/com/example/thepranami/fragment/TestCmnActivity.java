@@ -19,27 +19,12 @@ public class TestCmnActivity extends AppCompatActivity implements SendTextListen
                 .replace(R.id.frame1, frtOne)
                 .replace(R.id.frame2, frtTwo)
                 .commit();
-
-//        frtOne = (FragmentOne)getSupportFragmentManager().findFragmentByTag("abc");
-//
-//        if (frtOne==null){
-//            frtOne = new FragmentOne();
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.frame1, new FragmentOne()).commit();
-//        }
-//        frtTwo = (FragmentTwo)getSupportFragmentManager().findFragmentByTag("cdk");
-//        if (frtTwo==null){
-//            frtTwo = new FragmentTwo();
-//            getSupportFragmentManager().beginTransaction()
-//                    .add(R.id.frame2, new FragmentTwo()).commit();
-//        }
-
     }
 
     @Override
     public void sendText(String text) {
-        frtTwo.getDataaa(text);
-        frtOne.getData(text);
+        frtTwo.getFromFirst(text);
+        frtOne.getFromSecond(text);
 
     }
 

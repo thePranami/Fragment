@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         WindowManager windowManager = (WindowManager)getSystemService(WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
-        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.sub_id);
+        LinearLayout linearLayout = findViewById(R.id.mainLinear);
 
         int H = display.getHeight();
         int W = display.getWidth();
@@ -27,17 +27,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         if (H>W){
-            ft.replace(R.id.main, new FragmentOne());
+            ft.replace(R.id.mainLinear, new FragmentOne());
             linearLayout.setVisibility(View.GONE);
         }
         else if (W>H){
-            ft.replace(R.id.main, new FragmentTwo());
+            ft.replace(R.id.mainLinear, new FragmentTwo());
             linearLayout.setVisibility(View.GONE);
-
         }
-      //  ft.add(R.id.frag1, new FragmentOne());
-       // ft.add(R.id.frag2, new FragmentTwo());
         ft.commit();
-
     }
 }

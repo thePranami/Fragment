@@ -18,8 +18,8 @@ import android.widget.EditText;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentTwo extends Fragment{
-   Button btn, result;
-   private EditText editText;
+   Button send2;
+   private EditText fragTwoEditText;
    private SendTextListener sendTextListener;
 
 
@@ -27,43 +27,24 @@ public class FragmentTwo extends Fragment{
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_fragment_two, container, false);
 
-     /*   btn = (Button)view.findViewById(R.id.bt);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.replace(R.id.main, new FragmentTwo());
-                ft.commit();
-            }
-        });       */
-     result=view.findViewById(R.id.resultButton);
-     editText=view.findViewById(R.id.frame2edittext);
+     send2=view.findViewById(R.id.send2);
+     fragTwoEditText=view.findViewById(R.id.fragTwoEditText);
 
-     result.setOnClickListener(new View.OnClickListener() {
+     send2.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-             String string = editText.getText().toString();
-             //CharSequence input = editText.getText();
-             String msg = "helloooo";
-             sendTextListener.sendText(string);
+             sendTextListener.sendText(fragTwoEditText.getText().toString());
              sendTextListener.changeButtonColor(R.color.colorDarkRed);
          }
      });
         return view;
     }
-
-//    public interface SendTextListener{
-//        void sendText(String text);
-//        void changeButtonColor(int color);
-//    }
 
     @Override
     public void onAttach(Context context) {
@@ -81,8 +62,7 @@ public class FragmentTwo extends Fragment{
         super.onDetach();
         sendTextListener =null;
     }
-
-    public void getDataaa(String data){
-        editText.setText(data);
+    public void getFromFirst(String data){
+        fragTwoEditText.setText(data);
     }
 }
